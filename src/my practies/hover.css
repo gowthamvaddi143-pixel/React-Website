@@ -1,0 +1,39 @@
+.wrapper{
+    display: flex;
+    height: 250px;
+    width: 250px;
+    gap: 10px;
+}
+.wrapper .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    background: #111;
+    border: 3px solid #fff;
+    transition: flex 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 100%;
+
+}
+.card h2{
+    min-width: 13rem;
+    text-transform: uppercase;
+    color: #fff;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+    flex:4;
+}
+
+.card:hover h2{
+    transform: rotate(0deg);
+}
+.h2text{
+    color: #e0e0e0;
+    text-shadow: -2px -2px 3px #ffffff,2px 2px 3px #a3a3a3;
+}

@@ -1,0 +1,49 @@
+import { useEffect, useState } from 'react';
+import './mouse-over.css';
+import axios from 'axios';
+
+
+
+export function MouseOver(){
+
+    const [products, setProducts] =useState([{id:0, image:''}])
+    const [preview, setPreview] = useState('')
+    function LoadProducts(){
+        axios.get(`https://fakestoreapi.com/products/category/jewelery`)
+        .then(response=>{
+            setProducts(response.data);
+            setPreview(response.data[2].image);
+        })
+    }
+
+    useEffect(()=>{
+        LoadProducts()
+    },[])
+
+    function handleMouseOver(e){
+        setPreview(e.target.src);
+    }
+
+    return(
+        <div className="container-fluid">
+            <div className='row'>
+                <div className='col-2'>
+                    {
+                        products.map(product=>
+                            <div key={product.id} className='my-4 border-style'>
+                                <img onMouseOver={handleMouseOver} src={product.image} width="50" height="50"/>
+                            </div>
+
+                        )
+                    }
+
+                </div>
+                <div className='col-10'>
+                    <img src={preview} height="400" className='mt-4' />
+                </div>
+
+            </div>
+             
+        </div>
+    )
+}

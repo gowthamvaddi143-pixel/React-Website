@@ -1,0 +1,42 @@
+/* Container styling */
+.slider-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px 0;
+}
+
+/* Base Range Input Reset */
+.custom-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #004b8d; /* Blue track color */
+  border-radius: 3px;
+  outline: none;
+}
+
+/* Chrome, Safari, Opera, Edge thumb styling */
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #004b8d; /* Inner blue box */
+  border: 3px solid #ed1c24; /* Outer red border (HDFC logo style) */
+  outline: 2px solid #ffffff; /* White gap between red and inner blue */
+  cursor: pointer;
+  box-shadow: 0 0 0 2px #ed1c24; /* Outer red boundary */
+}
+
+/* Firefox thumb styling */
+.custom-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #004b8d;
+  border: 3px solid #ed1c24;
+  outline: 2px solid #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0 0 2px #ed1c24;
+  box-sizing: border-box;
+}
